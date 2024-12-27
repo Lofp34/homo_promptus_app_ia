@@ -1,0 +1,17 @@
+Test Mini App IA
+
+Commecial B2B en formation commerciale dans le secteur logiciel
+
+Générer de nouveaux prospects, notamment grace à des intercations constructives et ptogressive sur Linkedin
+
+M'aider à analyser des profils de prospects sur linkedin et construire des stratégies de prise de contact constructives qui amènent les interlocuteurs à s'interesser à mes services
+
+Créer un cas d’usage:
+Je veux créer des stratégies sur mesure pour analyser un profil linkedin et créer une stratégie de prise de contact progressive et constructive pour amener le prospect a prendre conscience de l'importance de faire faire une formation commeciale à son équipe
+
+
+Pour Tester, tu copie colle le cas d'usage généré + ton profil telechargé sur linkedin en pdf (il y a un bouton sur ton profil pour cela)... et tu valides :-)
+  
+
+
+Tout cela est une toute première version… à affiner très fortement :-)))
