@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini App IA – Version 0 (MPP)</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>Mini App IA – Version 0 (MPP)</h1>
+</header>
+
+<div class="container">
+  <!-- Navbar simple pour naviguer entre sections -->
+  <div class="navbar">
+    <button onclick="showSection('onboarding')">Onboarding</button>
+    <button onclick="showSection('dashboard')">Dashboard</button>
+    <button onclick="showSection('historique')">Historique</button>
+  </div>
+
+  <!-- SECTION 1: Onboarding -->
+  <div id="onboarding" class="">
+    <h2 class="section-title">Onboarding</h2>
+    <p>Bienvenue ! Pour personnaliser vos cas d'usage, merci de répondre à 3 courtes questions :</p>
+    <label>Quel est votre rôle professionnel ?</label>
+    <input type="text" id="role" placeholder="Ex: Commercial B2B" />
+
+    <label>Quel est votre principal défi quotidien ?</label>
+    <input type="text" id="defi" placeholder="Ex: Prospection, gestion clients..." />
+
+    <label>Qu'attendez-vous le plus de l'IA ?</label>
+    <input type="text" id="attente" placeholder="Ex: Gagner du temps, générer des leads..." />
+    
+    <button onclick="completeOnboarding()">Terminer l'onboarding</button>
+  </div>
+
+  <!-- SECTION 2: Dashboard -->
+  <div id="dashboard" class="hidden">
+    <h2 class="section-title">Dashboard</h2>
+    <p id="greeting"></p>
+    
+    <div class="card">
+      <h3>Cas d'usage du jour</h3>
+      <p id="dailyUsageText">...</p>
+      <button class="small-button" onclick="getRandomDailyUsage()">Rafraîchir</button>
+    </div>
+
+    <button onclick="showSection('creation')">Créer mon cas d'usage sur-mesure</button>
+  </div>
+
+  <!-- SECTION 2b: Ecran de création de cas d'usage -->
+  <div id="creation" class="hidden">
+    <h2 class="section-title">Créer un cas d'usage</h2>
+    <p>Décrivez rapidement le problème ou le besoin :</p>
+    <textarea id="userProblem" rows="3" placeholder="Ex: J'aimerais gagner du temps pour rédiger mes emails de prospection..."></textarea>
+    <button onclick="generateUsage()">Générer le cas d'usage</button>
+    
+    <div id="usageResult" class="card" style="margin-top:10px; display:none;">
+      <p><strong>Prompt généré :</strong> <span id="promptOutput"></span></p>
+      <p><strong>Exemple de réponse IA :</strong> <span id="responseOutput"></span></p>
+      <div class="feedback-buttons">
+        <button class="small-button" onclick="saveUsage('like')">Utile</button>
+        <button class="small-button" onclick="saveUsage('dislike')">À retravailler</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: Historique -->
+  <div id="historique" class="hidden">
+    <h2 class="section-title">Historique de mes cas d'usage</h2>
+    <div id="usageHistory"></div>
+    <button class="small-button" onclick="clearHistory()">Vider l'historique</button>
+  </div>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
